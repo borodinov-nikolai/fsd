@@ -1,0 +1,31 @@
+@import './_reset.scss';
+@import './mixins/_breackpoints.scss';
+
+
+
+
+
+.container {
+
+    @include breakpoint(sm) {
+
+    }
+    @include breakpoint(md) {
+
+    }
+    @include breakpoint(lg) {
+
+    }
+    @include breakpoint(xl) {
+
+    }
+    @include breakpoint(2xl) {
+
+    }
+
+}
+
+body {
+    position: relative;
+    height: 200vh;
+}

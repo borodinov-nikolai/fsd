@@ -1,0 +1,127 @@
+
+
+
+.root {
+height: 230px;
+color: white;
+position: absolute;
+width: 100%;
+top:0;
+left:0;
+
+}
+
+
+.grid {
+
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 130px 1fr;
+    border: 1px solid white;
+    
+
+    .logo {
+        cursor:pointer;
+        display: flex;
+        grid-column: 1/4;
+        border-bottom:1px solid white;
+        justify-content: center;
+        align-items: center;
+
+        .logo_image {
+        width: 334px;
+            height: 68px;
+        }
+    }
+    .city {
+        cursor:pointer;
+        display: flex;
+        grid-column: 4/6;
+        border-left:1px solid white;
+        border-bottom:1px solid white;
+        justify-content: center;
+        align-items: center;   
+    }
+    .search {
+        cursor:pointer;
+        display: flex;
+        grid-column: 6/9;
+        border-left:1px solid white;
+        border-bottom:1px solid white;
+        justify-content: center;
+        align-items: center;   
+    }
+    .call {
+        cursor:pointer;
+        display: flex;
+        grid-column: 9/11;
+        border-left:1px solid white;
+        border-bottom:1px solid white;
+        justify-content: center;
+        align-items: center;  
+    }
+    .user_bar {
+        cursor:pointer;
+        display: flex;
+        grid-column: 11/13;
+        border-left:1px solid white;
+        border-bottom:1px solid white;
+    }
+    .home {
+        cursor:pointer;
+        display: flex;
+        grid-column: 1/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+     .catalog {
+        cursor:pointer;
+        display: flex;
+        border-left: 1px solid white;
+        grid-column: 3/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+     .services {
+        cursor:pointer;
+        display: flex;
+        border-left: 1px solid white;
+        grid-column: 5/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+     .maintenance {
+        cursor:pointer;
+        display: flex;
+        border-left: 1px solid white;
+        grid-column: 7/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+     .company {
+        cursor:pointer;
+        display: flex;
+        border-left: 1px solid white;
+        grid-column: 9/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+     .contacts {
+        cursor:pointer;
+        display: flex;
+        border-left: 1px solid white;
+        grid-column: 11/ span 2;
+        grid-row: 2;
+        justify-content: center;
+        align-items: center; 
+     }
+    
+}
+
+
