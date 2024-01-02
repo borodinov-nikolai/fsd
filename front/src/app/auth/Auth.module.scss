@@ -1,0 +1,39 @@
+
+
+
+.root {
+    position: absolute;
+    top:0;
+    left:0;
+display: flex;
+z-index: 100;
+width: 100vw;
+height: 100vh;
+}
+
+
+
+.leftBlock {
+    background-image: url('../../shared/assets/images/printer_service.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -150px;
+    flex-basis: 50%;
+
+    .leftBlock_blueFilter {
+    display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,86,156, 0.8) ;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.rightBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-basis: 50%;
+}
