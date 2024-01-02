@@ -1,28 +1,33 @@
-
-
-
-
 .button {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
-
-
-
-
-
 .primary {
-    color: white;
-    background-color: #00569C;
-    &:hover {
-        box-shadow: 0px 0px 50.032318115234375px 0px #00569C80;
-        background-color: #036dc4;
+  color: white;
+  background-color: #00569c;
+  &:hover {
+    box-shadow: 0px 0px 50.032318115234375px 0px #00569c80;
+    // background-color: #036dc4;
+  }
+}
 
-    }
+.primary_outlined {
+  background-color: white;
+  color: #00569c;
+  border: 1px solid;
+  &:hover {
+    box-shadow: 0px 0px 50.032318115234375px 0px #00569c80;
+    // background-color: #036dc4;
+  }
 }
 
 .default {
-    color: black;
-    background-color: white;
+  color: black;
+  background-color: white;
+  outline: 1px solid black;
+  &:hover {
+    box-shadow: 0px 0px 50.032318115234375px 0px #8b8b8b80;
+    // background-color: #ededed;
+  }
 }

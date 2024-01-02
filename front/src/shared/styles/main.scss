@@ -1,30 +1,19 @@
-@import './_reset.scss';
-@import './mixins/_breackpoints.scss';
-
-
-
-
+@import "./_reset.scss";
+@import "./mixins/_breackpoints.scss";
 
 .container {
-
-    @include breakpoint(sm) {
-
-    }
-    @include breakpoint(md) {
-
-    }
-    @include breakpoint(lg) {
-
-    }
-    @include breakpoint(xl) {
-
-    }
-    @include breakpoint(2xl) {
-
-    }
-
+  @include breakpoint(sm) {
+  }
+  @include breakpoint(md) {
+  }
+  @include breakpoint(lg) {
+  }
+  @include breakpoint(xl) {
+  }
+  @include breakpoint(2xl) {
+  }
 }
 
 body {
-    position: relative;
+  position: relative;
 }
