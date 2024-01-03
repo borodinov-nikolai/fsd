@@ -1,4 +1,4 @@
-import { $cms_api } from "@/shared/api/axios_instances";
+import { $cms_api } from "@/shared/api/configs/axios";
 
 export const getUser = async () => {
   const token = localStorage.getItem("token");

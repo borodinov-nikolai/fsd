@@ -12,7 +12,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   const color = pathname === "/" ? { color: "white" } : { color: "black" };
   const icon_logo = pathname === "/" ? logo_white : logo_black;

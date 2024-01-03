@@ -1,25 +1,38 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import styles from "./Auth_form.module.scss";
 import Input from "@/shared/ui/input";
 import Button from "@/shared/ui/button";
-import { register } from "../api/auth";
+import { useRegiterMutation } from "../api/auth";
 
 const Auth_form = () => {
   const [mode, setMode] = useState<"auth" | "register">("auth");
   const [login, setLogin] = useState<string>("");
   const [mail, setMail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [register] = useRegiterMutation()
+
+
+
+ 
 
   const registration = async (
-    login: string,
-    mail: string,
+    username: string,
+    email: string,
     password: string,
   ) => {
-    const res = await register(login, mail, password);
-    localStorage.setItem("token", res?.data?.jwt);
-    console.log(res?.data.jwt);
-  };
+ 
+    const res = await register({username, email, password})
+    if ("data" in res) {
+      console.log(res.data.jwt)
+      localStorage.setItem("token", res.data.jwt)
+    } else {
+      console.log(res.error)
+    }
+  } 
+  ;
+
+
 
   if (mode === "auth") {
     return (

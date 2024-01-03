@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Auth.module.scss";
 import Image from "next/image";
 import icon_logo from "@/shared/assets/icons/logo_white.png";
-import Auth_form from "@/features/auth_form";
+import {Auth_form} from "@/features/auth_form";
 
 const Auth = () => {
   return (

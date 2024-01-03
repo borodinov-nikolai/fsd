@@ -1,18 +1,41 @@
-import { $cms_api } from "@/shared/api/axios_instances";
+import { emptySplitApi } from "@/shared/api/configs/rtk_query"
 
-export const register = async (
+
+
+interface UserData {
+
+    jwt: string,
+    user: any
+  
+}
+
+interface Body {
+
   username: string,
   email: string,
-  password: string,
-) => {
-  try {
-    const res = await $cms_api.post("/auth/local/register", {
-      username: String(username),
-      email: String(email),
-      password: String(password),
-    });
-    return res;
-  } catch (e) {
-    console.error(e);
-  }
-};
+  password: string
+}
+
+
+
+const extendedApi = emptySplitApi.injectEndpoints({
+  endpoints: (build) => ({
+    regiter: build.mutation<UserData, Body>({
+      query({username, email, password}) {
+        return {
+          url: '/auth/local/register',
+          method: 'POST',
+          body: {
+            username,
+            email,
+            password
+          }
+         }  
+      }
+     
+    }),
+  }),
+  overrideExisting: false,
+})
+
+export const { useRegiterMutation } = extendedApi
