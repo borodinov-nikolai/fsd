@@ -2,25 +2,14 @@ import { emptySplitApi } from "@/shared/api/configs/rtk_query"
 
 
 
-interface UserData {
 
-    jwt: string,
-    user: any
-  
-}
-
-interface Body {
-
-  username: string,
-  email: string,
-  password: string
-}
 
 
 
 const extendedApi = emptySplitApi.injectEndpoints({
   endpoints: (build) => ({
-    regiter: build.mutation<UserData, Body>({
+
+    registration: build.mutation({
       query({username, email, password}) {
         return {
           url: '/auth/local/register',
@@ -34,8 +23,22 @@ const extendedApi = emptySplitApi.injectEndpoints({
       }
      
     }),
+
+    authorization: build.mutation({
+      query({identifier, password}: {identifier: string, password:string}) {
+        return {
+          url: '/auth/local',
+          method: 'POST',
+          body: {
+            identifier,
+            password
+          }
+
+        }
+      }
+    })
   }),
   overrideExisting: false,
 })
 
-export const { useRegiterMutation } = extendedApi
+export const { useRegistrationMutation, useAuthorizationMutation } = extendedApi

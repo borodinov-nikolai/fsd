@@ -1,16 +1,14 @@
 "use client";
-import React, { useEffect } from "react";
-import { getUser } from "../api/getUser";
+import React from "react";
+import { useGetUserQuery } from "../api/getUser";
+
 
 const Get_user = () => {
-  useEffect(() => {
-    const getUserData = async () => {
-      const res = await getUser();
-      console.log(res);
-    };
-    getUserData();
-  }, []);
 
+  const {data} =  useGetUserQuery(undefined)
+  
+  
+  console.log(data)
   return <></>;
 };
 

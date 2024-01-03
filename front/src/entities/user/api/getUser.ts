@@ -1,17 +1,15 @@
-import { $cms_api } from "@/shared/api/configs/axios";
+import { emptySplitApi } from "@/shared/api/configs/rtk_query"
 
-export const getUser = async () => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    try {
-      const res = $cms_api.get("/users/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      return res;
-    } catch (e) {
-      console.error(e);
-    }
-  }
-};
+
+
+
+const extendedApi = emptySplitApi.injectEndpoints({
+  endpoints: (build) => ({
+    getUser: build.query({
+      query: ()=> '/users/me'
+    }),
+  }),
+  overrideExisting: false,
+})
+
+export const { useGetUserQuery } = extendedApi

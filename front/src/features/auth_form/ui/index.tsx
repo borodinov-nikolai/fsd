@@ -3,35 +3,13 @@ import React, {useState } from "react";
 import styles from "./Auth_form.module.scss";
 import Input from "@/shared/ui/input";
 import Button from "@/shared/ui/button";
-import { useRegiterMutation } from "../api/auth";
+import { authorizationService, registrationService } from "../services/authServices";
 
 const Auth_form = () => {
   const [mode, setMode] = useState<"auth" | "register">("auth");
   const [login, setLogin] = useState<string>("");
-  const [mail, setMail] = useState<string>("");
+  const [email, setMail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [register] = useRegiterMutation()
-
-
-
- 
-
-  const registration = async (
-    username: string,
-    email: string,
-    password: string,
-  ) => {
- 
-    const res = await register({username, email, password})
-    if ("data" in res) {
-      console.log(res.data.jwt)
-      localStorage.setItem("token", res.data.jwt)
-    } else {
-      console.log(res.error)
-    }
-  } 
-  ;
-
 
 
   if (mode === "auth") {
@@ -55,7 +33,7 @@ const Auth_form = () => {
           />
         </div>
         <div className={styles.buttons_holder}>
-          <Button width={"full"} type={"primary"}>
+          <Button onClick={()=> authorizationService(email, password)} width={"full"} type={"primary"}>
             Продожить
           </Button>
           <Button
@@ -99,7 +77,7 @@ const Auth_form = () => {
         </div>
         <div className={styles.buttons_holder}>
           <Button
-            onClick={() => registration(login, mail, password)}
+            onClick={() => registrationService(login, email, password)}
             width={"full"}
             type={"primary"}
           >
