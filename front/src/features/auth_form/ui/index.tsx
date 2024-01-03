@@ -3,14 +3,16 @@ import React, {useState } from "react";
 import styles from "./Auth_form.module.scss";
 import Input from "@/shared/ui/input";
 import Button from "@/shared/ui/button";
-import { authorizationService, registrationService } from "../services/authServices";
+import useRegistration from "../lib/hooks/useRegistration";
+import useAuthorization from "../lib/hooks/useAuthorization";
 
 const Auth_form = () => {
   const [mode, setMode] = useState<"auth" | "register">("auth");
   const [login, setLogin] = useState<string>("");
   const [email, setMail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const registration = useRegistration()
+  const authorization = useAuthorization()
 
   if (mode === "auth") {
     return (
@@ -33,7 +35,7 @@ const Auth_form = () => {
           />
         </div>
         <div className={styles.buttons_holder}>
-          <Button onClick={()=> authorizationService(email, password)} width={"full"} type={"primary"}>
+          <Button onClick={()=> authorization(email, password)} width={"full"} type={"primary"}>
             Продожить
           </Button>
           <Button
@@ -77,7 +79,7 @@ const Auth_form = () => {
         </div>
         <div className={styles.buttons_holder}>
           <Button
-            onClick={() => registrationService(login, email, password)}
+            onClick={() => registration(login, email, password)}
             width={"full"}
             type={"primary"}
           >
