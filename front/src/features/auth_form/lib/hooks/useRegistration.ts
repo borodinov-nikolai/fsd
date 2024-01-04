@@ -14,7 +14,7 @@ const useRegistration = () => {
         const res = await registerApi({username, email, password})
         if ("data" in res) {
           console.log(res.data)
-          localStorage.setItem("token", res.data.jwt)
+          // localStorage.setItem("token", res.data.jwt)
         } else {
           console.log(res.error)
         }

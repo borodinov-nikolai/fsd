@@ -12,8 +12,8 @@ const useAuthorization = () => {
      
         const res = await authApi({identifier, password})
         if ("data" in res) {
-          console.log(res.data)
-          localStorage.setItem("token", res.data.jwt)
+          console.log(res)
+          // localStorage.setItem("token", res.data.jwt)
         } else {
           console.log(res.error)
         }

@@ -13,6 +13,7 @@ const extendedApi = emptySplitApi.injectEndpoints({
       query({username, email, password}) {
         return {
           url: '/auth/local/register',
+          credentials: "include",
           method: 'POST',
           body: {
             username,
@@ -28,6 +29,7 @@ const extendedApi = emptySplitApi.injectEndpoints({
       query({identifier, password}: {identifier: string, password:string}) {
         return {
           url: '/auth/local',
+          credentials: "include",
           method: 'POST',
           body: {
             identifier,
