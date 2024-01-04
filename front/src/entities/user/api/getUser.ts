@@ -8,6 +8,7 @@ const extendedApi = emptySplitApi.injectEndpoints({
     getUser: build.query({
       query: ()=>({
         url: '/users/me',
+        prefetch: true,
         credentials: 'include'
       })
     })

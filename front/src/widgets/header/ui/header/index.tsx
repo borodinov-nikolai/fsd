@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import logo_white from "@/shared/assets/icons/logo_white.png";
@@ -41,7 +41,10 @@ const Header = () => {
               <Image src={icon_cart} width={15} height={15} alt="cart icon" />
             </div>
           </div>
-            <Auth className={styles.userBar_account} />
+            <div className={styles.userBar_account}>
+              <Auth/>
+      
+            </div>
         </div>
         <div className={styles.home}>Главная</div>
         <div className={styles.catalog}>Каталог</div>

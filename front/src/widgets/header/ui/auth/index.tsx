@@ -1,22 +1,38 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import styles from './Auth.module.scss'
+import { useGetUserQuery } from '@/entities/user'
+
+
 
 const Auth = (props: any) => {
 
-    if(typeof window !== 'undefined') {
-        
-        const token =  localStorage.getItem('token')
+    const [isAuth, setIsAuth] = useState<boolean>()
+    const is_auth = window && localStorage.getItem('is_auth')
 
 
-  if(token) {
-        return  <Link {...props} href={'/account'}> Личный кабинет</Link>
-          
-    } else if(!token ) {
-       return <Link {...props} href={'/auth'}>Авторизация</Link>
+    
+    useEffect(()=> {
+        if(is_auth && is_auth === 'true') {
+            setIsAuth(true)
+        } else {
+            setIsAuth(false)
+        }
+    },[is_auth])
 
-    }
-    }
+ 
+
+
+   
+   if(window){
+
+       return <Link className={styles.root} {...props} href={isAuth ? '/account':'/auth'}>{isAuth? 'Личный кабинет' : 'Авторизация'}</Link>
+   }
+  
+
+
+    
     
   
 }

@@ -17,6 +17,7 @@ const useRegistration = () => {
         if ("data" in res) {
           console.log(res.data)
           localStorage.setItem("token", res.data.jwt)
+          localStorage.setItem("is_auth", 'true')
           router.push('/')
         } else {
           console.log(res.error)
