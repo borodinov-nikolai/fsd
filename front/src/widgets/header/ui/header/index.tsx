@@ -8,8 +8,8 @@ import icon_cart_white from "../../assets/icons/cart_white.png";
 import icon_cart_black from "../../assets/icons/cart_black.png";
 import icon_star_white from "@/shared/assets/icons/star_white.png";
 import icon_star_black from "@/shared/assets/icons/star_black.png";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Auth from "../auth";
 const Header = () => {
   const pathname = usePathname();
 
@@ -41,9 +41,7 @@ const Header = () => {
               <Image src={icon_cart} width={15} height={15} alt="cart icon" />
             </div>
           </div>
-          <Link className={styles.userBar_account} href={"/auth"}>
-            Личный кабинет
-          </Link>
+            <Auth className={styles.userBar_account} />
         </div>
         <div className={styles.home}>Главная</div>
         <div className={styles.catalog}>Каталог</div>

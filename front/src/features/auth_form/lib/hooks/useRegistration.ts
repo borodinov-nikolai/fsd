@@ -1,8 +1,10 @@
+import { useRouter } from 'next/navigation';
 import { useRegistrationMutation } from '../../api/authApi'
 
 
 
 const useRegistration = () => {
+  const router = useRouter()
     const [registerApi] = useRegistrationMutation()
 
     const registration = async (
@@ -14,7 +16,8 @@ const useRegistration = () => {
         const res = await registerApi({username, email, password})
         if ("data" in res) {
           console.log(res.data)
-          // localStorage.setItem("token", res.data.jwt)
+          localStorage.setItem("token", res.data.jwt)
+          router.push('/')
         } else {
           console.log(res.error)
         }

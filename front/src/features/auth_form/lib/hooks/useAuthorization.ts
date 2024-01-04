@@ -1,8 +1,10 @@
+import { useRouter } from 'next/navigation';
 import { useAuthorizationMutation, useRegistrationMutation } from '../../api/authApi'
 
 
 
 const useAuthorization = () => {
+  const router = useRouter()
     const [authApi] = useAuthorizationMutation()
 
     const autorization = async (
@@ -13,7 +15,8 @@ const useAuthorization = () => {
         const res = await authApi({identifier, password})
         if ("data" in res) {
           console.log(res)
-          // localStorage.setItem("token", res.data.jwt)
+          localStorage.setItem("token", res.data.jwt)
+          router.push('/')
         } else {
           console.log(res.error)
         }

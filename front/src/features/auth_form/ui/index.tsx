@@ -14,6 +14,7 @@ const Auth_form = () => {
   const registration = useRegistration()
   const authorization = useAuthorization()
 
+ 
   if (mode === "auth") {
     return (
       <div className={styles.root}>
