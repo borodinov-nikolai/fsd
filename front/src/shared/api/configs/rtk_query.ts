@@ -11,5 +11,6 @@ export const emptySplitApi = createApi({
     }
   } 
 }),
+tagTypes: ['User'],
   endpoints: () => ({}),
 })

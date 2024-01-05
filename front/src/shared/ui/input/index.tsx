@@ -7,6 +7,7 @@ interface Props {
   height?: number;
   width?: number | "full";
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  defaultValue?: string;
 }
 const Input: FC<Props> = ({
   height = 60,

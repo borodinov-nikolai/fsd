@@ -7,28 +7,34 @@ import { useGetUserQuery } from '@/entities/user'
 
 
 const Auth = (props: any) => {
-
-    const [isAuth, setIsAuth] = useState<boolean>()
-    const is_auth = window && localStorage.getItem('is_auth')
-
-
+    const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [isAuth, setIsAuth] = useState<boolean>(false);
+    const is_auth = typeof window !=='undefined' && localStorage.getItem('is_auth')
     
+
+
     useEffect(()=> {
-        if(is_auth && is_auth === 'true') {
+        setIsLoading(true)
+        if(is_auth) {
             setIsAuth(true)
-        } else {
+        }else {
             setIsAuth(false)
         }
+       setIsLoading(false)   
     },[is_auth])
 
  
 
 
    
-   if(window){
-
-       return <Link className={styles.root} {...props} href={isAuth ? '/account':'/auth'}>{isAuth? 'Личный кабинет' : 'Авторизация'}</Link>
+   if(!isLoading) {
+    return <Link className={styles.root} {...props} href={isAuth ? '/account':'/auth'}>{isAuth? 'Личный кабинет' : 'Авторизация'}</Link>
    }
+
+
+  
+
+   
   
 
 

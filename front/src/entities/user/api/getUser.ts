@@ -10,7 +10,8 @@ const extendedApi = emptySplitApi.injectEndpoints({
         url: '/users/me',
         prefetch: true,
         credentials: 'include'
-      })
+      }),
+      providesTags: ['User']
     })
   }),
   overrideExisting: false,
