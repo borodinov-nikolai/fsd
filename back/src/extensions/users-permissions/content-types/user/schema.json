@@ -75,6 +75,9 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

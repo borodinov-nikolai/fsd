@@ -5,7 +5,7 @@ import { useGetUserQuery } from "../api/getUser";
 
 const Get_user = () => {
 
-  const {data} =  useGetUserQuery(undefined)
+  const {data} =  useGetUserQuery(null)
   
   
   console.log(data)

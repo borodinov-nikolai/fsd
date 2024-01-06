@@ -753,6 +753,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     birthday: Attribute.Date;
     phone_number: Attribute.String;
     legal_entity: Attribute.Boolean & Attribute.DefaultTo<false>;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

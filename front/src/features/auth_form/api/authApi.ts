@@ -21,7 +21,8 @@ const extendedApi = emptySplitApi.injectEndpoints({
             password
           }
          }  
-      }
+      },
+      invalidatesTags: ['User']
      
     }),
 
@@ -37,7 +38,8 @@ const extendedApi = emptySplitApi.injectEndpoints({
           }
 
         }
-      }
+      },
+      invalidatesTags: ['User']
     })
   }),
 
