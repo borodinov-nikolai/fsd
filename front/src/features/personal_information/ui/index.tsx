@@ -49,8 +49,8 @@ const Personal_information = () => {
         <div className={styles.userInfo} >
           <h2 className={styles.userInfo_title} >Личные данные:</h2>
           <div className={styles.userInfo_personChange} >
-            <div className={styles.userInfo_person} ><Button onClick={()=>setLegal_entity(false)} width={'full'} type={!user? 'default':legal_entity ?? user_entity ? 'default':'primary' } >Физическое лицо</Button></div>
-            <div className={styles.userInfo_person}><Button onClick={()=>setLegal_entity(true)} width={'full'} type={!user? 'default':legal_entity ?? user_entity ? 'primary':'default' } >Юридическое лицо</Button></div>
+            <div className={styles.userInfo_person} ><Button onClick={()=>setLegal_entity(false)} width={'full'} variant={!user? 'default':legal_entity ?? user_entity ? 'default':'primary' } >Физическое лицо</Button></div>
+            <div className={styles.userInfo_person}><Button onClick={()=>setLegal_entity(true)} width={'full'} variant={!user? 'default':legal_entity ?? user_entity ? 'primary':'default' } >Юридическое лицо</Button></div>
           </div>
           <div className={styles.userInfo_personalaData}>
             <div className={styles.userInfo_itemsHolder} >
@@ -76,7 +76,7 @@ const Personal_information = () => {
                 <Input onChange={(e) => setEmail(e.target.value)} defaultValue={user_email} placeholder='Эл. Почта' />
               </div>
               <div className={styles.userInfo_saveBtn} >
-                <Button onClick={handleSaveClick} width={388} height={60} type={'primary'} >Сохранить</Button>
+                <Button onClick={handleSaveClick} width={388} height={60} variant={'primary'} >Сохранить</Button>
               </div>
             </div>
           </div>
