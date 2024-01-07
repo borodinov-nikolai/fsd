@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useGetUserQuery } from "../api/getUser";
 
-
 const Get_user = () => {
+  const getUserQuery = useGetUserQuery;
+  const token = typeof window !== "undefined" && localStorage.getItem("token");
 
-  const {data} =  useGetUserQuery(null)
-  
-  
-  console.log(data)
+  if (token) {
+    const res = getUserQuery(null);
+  }
+
   return <></>;
 };
 
