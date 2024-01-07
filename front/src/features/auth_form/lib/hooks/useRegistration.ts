@@ -1,35 +1,29 @@
-import { useRouter } from 'next/navigation';
-import { useRegistrationMutation } from '../../api/authApi'
-
-
+import { useRouter } from "next/navigation";
+import { useRegistrationMutation } from "../../api/authApi";
 
 const useRegistration = () => {
-  const router = useRouter()
-  const [registerApi] = useRegistrationMutation()
+  const router = useRouter();
+  const [registerApi] = useRegistrationMutation();
 
-  const registration = async (
-    { username,
-      email,
-      password }:
-      {
-        username: string,
-        email: string,
-        password: string,
-      }
-  ) => {
-
-    const res = await registerApi({ username, email, password })
+  const registration = async ({
+    username,
+    email,
+    password,
+  }: {
+    username: string;
+    email: string;
+    password: string;
+  }) => {
+    const res = await registerApi({ username, email, password });
     if ("data" in res) {
-      console.log(res.data)
-      localStorage.setItem("token", res.data.jwt)
-      localStorage.setItem("is_auth", 'true')
-      router.push('/')
-    } else {
-      console.log(res.error)
+      localStorage.setItem("token", res.data.jwt);
+      localStorage.setItem("is_auth", "true");
+      router.push("/");
     }
-  }
-    ;
-  return registration
-}
+    return res;
+  };
 
-export default useRegistration
+  return registration;
+};
+
+export default useRegistration;

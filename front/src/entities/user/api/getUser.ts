@@ -1,28 +1,27 @@
-import { emptySplitApi } from "@/shared/api/configs/rtk_query"
-
+import { emptySplitApi } from "@/shared/api/configs/rtk_query";
 
 interface IUser {
-  id: number,
-  username: string,
-  name: string,
-  phone_number: string,
-  birthday: string,
-  email: string,
-  legal_entity: boolean
+  id: number;
+  username: string;
+  name: string;
+  phone_number: string;
+  birthday: string;
+  email: string;
+  legal_entity: boolean;
 }
 
 const extendedApi = emptySplitApi.injectEndpoints({
   endpoints: (build) => ({
     getUser: build.query<IUser, null>({
-      query: ()=>({
-        url: '/users/me',
+      query: () => ({
+        url: "/users/me",
         prefetch: true,
-        credentials: 'include'
+        credentials: "include",
       }),
-      providesTags: ['User']
-    })
+      providesTags: ["User"],
+    }),
   }),
   overrideExisting: false,
-})
+});
 
-export const { useGetUserQuery } = extendedApi
+export const { useGetUserQuery } = extendedApi;

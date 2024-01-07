@@ -1,51 +1,47 @@
-import { emptySplitApi } from "@/shared/api/configs/rtk_query"
-
-
-
-
-
-
+import { emptySplitApi } from "@/shared/api/configs/rtk_query";
 
 const extendedApi = emptySplitApi.injectEndpoints({
   endpoints: (build) => ({
-
     registration: build.mutation({
-      query({username, email, password}) {
+      query({ username, email, password }) {
         return {
-          url: '/auth/local/register',
+          url: "/auth/local/register",
           credentials: "include",
-          method: 'POST',
+          method: "POST",
           body: {
             username,
             email,
-            password
-          }
-         }  
+            password,
+          },
+        };
       },
-      invalidatesTags: ['User']
-     
+      invalidatesTags: ["User"],
     }),
 
     authorization: build.mutation({
-      query({identifier, password}: {identifier: string, password:string}) {
+      query({
+        identifier,
+        password,
+      }: {
+        identifier: string;
+        password: string;
+      }) {
         return {
-          url: '/auth/local',
+          url: "/auth/local",
           credentials: "include",
-          method: 'POST',
+          method: "POST",
           body: {
             identifier,
-            password
-          }
-
-        }
+            password,
+          },
+        };
       },
-      invalidatesTags: ['User']
-    })
+      invalidatesTags: ["User"],
+    }),
   }),
 
-
-  
   overrideExisting: false,
-})
+});
 
-export const { useRegistrationMutation, useAuthorizationMutation } = extendedApi
+export const { useRegistrationMutation, useAuthorizationMutation } =
+  extendedApi;

@@ -1,78 +1,67 @@
-
-
-
-
 .root {
-    background: url('./../assets/images/purchase_history_bg.jpg');
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 100px;
-    gap: 105px;
-    width: 100%;
+  background: url("./../assets/images/purchase_history_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 100px;
+  gap: 105px;
+  width: 100%;
 }
-
 
 .leftBlock {
-    flex-basis: 20%;
+  flex-basis: 20%;
 
-    
-     .leftBloc_title {
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 39px;
-     }
-     .leftBlock_quantity {
-        margin-top: 5px;
-        opacity: 50%;
-        line-height: 19px;
-     }
-
-
+  .leftBloc_title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+  }
+  .leftBlock_quantity {
+    margin-top: 5px;
+    opacity: 50%;
+    line-height: 19px;
+  }
 }
 
-
 .rightBlock {
-    
-    flex-basis: 70%;
+  flex-basis: 70%;
 
-    .rightBlock_head {
-        display: flex;
-        width: 100%;
+  .rightBlock_head {
+    display: flex;
+    width: 100%;
 
-        p {
-            text-align: left;
-            flex-basis: 1;
-            width: 100%;
-            font-size: 20px;
-            line-height: 24px;
-            opacity: 50%;
-            font-weight: 600;
-        }
+    p {
+      text-align: left;
+      flex-basis: 1;
+      width: 100%;
+      font-size: 20px;
+      line-height: 24px;
+      opacity: 50%;
+      font-weight: 600;
     }
+  }
 
-    .rightBlock_orderList {
-        margin-top: 20px;
+  .rightBlock_orderList {
+    margin-top: 20px;
+    width: 100%;
+
+    li {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      p {
+        flex-basis: 1;
+        text-align: left;
         width: 100%;
-
-            li {
-                border-top: 1px solid rgba(0,0,0, 0.1);
-                padding: 20px 0;
-                display: flex;
-                justify-content: space-between;
-                p {
-                    flex-basis: 1;
-                    text-align: left;
-                    width: 100%;
-                    font-weight: 600;
-                    line-height: 19px;
-                }
-                .rightBlock_check {
-                cursor: pointer;
-                }
-            }
-       
+        font-weight: 600;
+        line-height: 19px;
+      }
+      .rightBlock_check {
+        cursor: pointer;
+      }
     }
+  }
 }

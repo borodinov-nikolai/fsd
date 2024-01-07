@@ -4,12 +4,12 @@ import styles from "./Header.module.scss";
 import Image from "next/image";
 import logo_white from "@/shared/assets/icons/logo_white.png";
 import logo_black from "@/shared/assets/icons/logo_black.png";
-import icon_cart_white from "../../assets/icons/cart_white.png";
-import icon_cart_black from "../../assets/icons/cart_black.png";
+import icon_cart_white from "../assets/icons/cart_white.png";
+import icon_cart_black from "../assets/icons/cart_black.png";
 import icon_star_white from "@/shared/assets/icons/star_white.png";
 import icon_star_black from "@/shared/assets/icons/star_black.png";
 import { usePathname } from "next/navigation";
-import Auth from "../auth";
+import Auth from "./components/auth";
 const Header = () => {
   const pathname = usePathname();
 
@@ -41,10 +41,9 @@ const Header = () => {
               <Image src={icon_cart} width={15} height={15} alt="cart icon" />
             </div>
           </div>
-            <div className={styles.userBar_account}>
-              <Auth/>
-      
-            </div>
+          <div className={styles.userBar_account}>
+            <Auth />
+          </div>
         </div>
         <div className={styles.home}>Главная</div>
         <div className={styles.catalog}>Каталог</div>

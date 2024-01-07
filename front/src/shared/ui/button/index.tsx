@@ -11,42 +11,47 @@ interface Props {
   font_size?: number;
   variant?: "primary" | "primary_outlined" | "default";
   children?: ReactNode;
-  [key:string]:any; 
+  [key: string]: any;
 }
 
-const Button: FC<Props> = React.forwardRef(({
-  width = 400,
-  height = 75,
-  children,
-  variant = "primary",
-  font_size = 24,
-  type ='button',
-  ...props
-}, ref:React.LegacyRef<HTMLButtonElement> | undefined) => {
-  const sizes = {
-    width: width === "full" ? "100%" : `${width}px`,
-    height: `${height}px`,
-    fontSize: `${font_size}px`,
-  };
+const Button: FC<Props> = React.forwardRef(
+  (
+    {
+      width = 400,
+      height = 75,
+      children,
+      variant = "primary",
+      font_size = 24,
+      type = "button",
+      ...props
+    },
+    ref: React.LegacyRef<HTMLButtonElement> | undefined,
+  ) => {
+    const sizes = {
+      width: width === "full" ? "100%" : `${width}px`,
+      height: `${height}px`,
+      fontSize: `${font_size}px`,
+    };
 
-  const color =
-  variant === "primary"
-      ? styles.primary
-      : variant === "primary_outlined"
-        ? styles.primary_outlined
-        : styles.default;
+    const color =
+      variant === "primary"
+        ? styles.primary
+        : variant === "primary_outlined"
+          ? styles.primary_outlined
+          : styles.default;
 
-  return (
-    <button
-    ref={ref}
-    type={type}
-      {...props}
-      style={{ ...sizes }}
-      className={[styles.button, color].join(" ")}
-    >
-      {children}
-    </button>
-  );
-})
-Button.displayName = 'Button';
+    return (
+      <button
+        ref={ref}
+        type={type}
+        {...props}
+        style={{ ...sizes }}
+        className={[styles.button, color].join(" ")}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+Button.displayName = "Button";
 export default Button;

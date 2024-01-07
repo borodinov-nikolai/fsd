@@ -1,46 +1,37 @@
-
-
-
 .root {
-    
 }
 
-
-
 .head {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .head_greeting {
-
-    .head_name {
-        font-size: 48px;
-        line-height: 58.51px;
-        font-weight: 600;
-        span {
-            color: rgba(0, 86, 156, 1);
-        }
+  .head_name {
+    font-size: 48px;
+    line-height: 58.51px;
+    font-weight: 600;
+    span {
+      color: rgba(0, 86, 156, 1);
     }
-    .head_phoneNumber {
-        margin-top: 15px;
-        height: 20px;
-        font-size: 20px;
-        line-height: 24px;
-    }
+  }
+  .head_phoneNumber {
+    margin-top: 15px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 .head_leaveBtn {
-    cursor: pointer;
-    align-self: end;
-    line-height: 19.5px;
+  cursor: pointer;
+  align-self: end;
+  line-height: 19.5px;
 }
-
 
 .userInfo {
-    margin-top: 65px;
+  margin-top: 65px;
 }
-
 
 .userInfo_title {
   font-size: 32px;
@@ -49,47 +40,43 @@
 }
 
 .userInfo_personChange {
-    display: flex;
-    margin-top: 25px;
+  display: flex;
+  margin-top: 25px;
 
-    .userInfo_person {
-        flex-basis: 50%;
-    }
+  .userInfo_person {
+    flex-basis: 50%;
+  }
 }
 
 .userInfo_personalaData {
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    gap:45px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
 }
-
 
 .userInfo_itemsHolder {
+  display: flex;
+  gap: 72px;
+
+  div {
     display: flex;
-    gap: 72px;
+    align-items: center;
+    gap: 65px;
 
-    
-    div {
-        display: flex;
-        align-items: center;
-        gap: 65px;
-
-        p {
-            font-size: 20px;
-            font-weight: 600;
-            opacity: 70%;
-        }
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      opacity: 70%;
     }
+  }
 
-    .userInfo_text {
-    
-        p {
-            opacity: 1;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19px;
-        }
+  .userInfo_text {
+    p {
+      opacity: 1;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
     }
+  }
 }
-
